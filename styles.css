@@ -33,7 +33,7 @@ html {
 	/* animation: coloredBackground 1s linear 0 infinite normal ; */
 }
 #numpad {
-	box-shadow: 0 0 5px black;
+	box-shadow: 0 0 10px black;
 	background-image: linear-gradient(to left,black,gray,black);
 	width:60%;
 	padding:15px;
@@ -104,3 +104,4 @@ button:active{
 	font-size: 5rem;
 
 }
+
