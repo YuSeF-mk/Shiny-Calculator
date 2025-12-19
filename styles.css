@@ -22,8 +22,8 @@ html {
     100% { background-position: 0% 50%;}
 }
 #container {
-	/* background-image: linear-gradient(to left bottom,rgb(196, 171, 27),rgb(234, 234, 74),rgb(223, 226, 155),rgb(201, 210, 132)); */
-	background-image: url("./bg.jpg");
+	background-image: linear-gradient(to left,rgb(172, 172, 0),rgb(139, 91, 1));
+	/*background-image: url("./bg.jpg");*/
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -102,4 +102,5 @@ button:active{
 		background-color: rgb(190, 165, 38);
 	color: antiquewhite;
 	font-size: 5rem;
+
 }
