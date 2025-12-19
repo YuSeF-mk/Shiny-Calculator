@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculator</title>
+		<script
+			src="https://kit.fontawesome.com/620ba12140.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="numpad">
+                <div id="display">
+                    <input id="paragraph" readonly >
+				</div>
+				<div id="btns">
+					<button style="grid-area:btn1 ;" class="inp">1</button>
+					<button style="grid-area:btn2 ;" class="inp">2</button>
+					<button style="grid-area:btn3 ;" class="inp">3</button>
+					<button style="grid-area:btn4 ;" class="inp">4</button>
+					<button style="grid-area:btn5 ;" class="inp">5</button>
+					<button style="grid-area:btn6 ;" class="inp">6</button>
+					<button style="grid-area:btn7 ;" class="inp">7</button>
+					<button style="grid-area:btn8 ;" class="inp">8</button>
+					<button style="grid-area:btn9 ;" class="inp">9</button>
+					<button style="grid-area:btn0 ;" class="inp">0</button>
+					<button style="grid-area:dot ;" class="inp" id="dot">.</button>
+					<button style="grid-area: plus;" class="inp opr" data-value="+"><span style="display: none;">+</span><i class="fa-solid fa-plus"></i></button>
+					<button style="grid-area: minus;" class="inp opr" data-value="-"><span style="display: none;">-</span><i class="fa-solid fa-minus"></i></button>
+					<button style="grid-area: mult;" class="inp opr" data-value="*"><span style="display: none;">x</span><i class="fa-solid fa-x"></i></button>
+					<button style="grid-area: divide;" class="inp opr" data-value="/"><span style="display: none;">/</span><i class="fa-solid fa-divide"></i></button>
+					<button style="grid-area: clear;" id="clear"><i class="fa-solid fa-eraser"></i></button>
+					<button style="grid-area: delete;" id="delete"><i class="fa-solid fa-delete-left"></i></button>
+                    <button style="grid-area: equal;" id="equal"><i class="fa-solid fa-equals"></i></button>
+				</div>
+			</div>
+		</div>
+		<script src="./script.js" async></script>
+	</body>
+</html>
