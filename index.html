@@ -14,7 +14,7 @@
 		<div id="container" class="background">
 			<div id="numpad">
 				<div id="display">
-					<input id="paragraph" readonly>
+					<div id="paragraph" readonly></div>
 				</div>
 				<div id="btns">
 					<button style="grid-area: btn1" class="inp">1</button>
@@ -28,40 +28,34 @@
 					<button style="grid-area: btn9" class="inp">9</button>
 					<button style="grid-area: btn0" class="inp">0</button>
 					<button style="grid-area: dot" class="inp" id="dot">.</button>
+					<!--^ areal clear ATTR is for screen readers because theris no text-->
 					<button
 					aria-label="plus button"
 					style="grid-area: plus"
 					class="inp opr"
 					data-value="+"
-					>
-					<!--^ areal clear is for screen readers because theris no text-->
-						<span style="display: none">+</span><i class="fa-solid fa-plus"></i>
+					><span style="display: none;">+</span><i class="fa-solid fa-plus"></i>
 					</button>
 					<button
 						aria-label="minus button"
 						style="grid-area: minus"
 						class="inp opr"
 						data-value="-"
-					>
-						<span style="display: none">-</span
-						><i class="fa-solid fa-minus"></i>
+					><span style="display: none;">-</span><i class="fa-solid fa-minus"></i>
 					</button>
 					<button
 						aria-label="multiplication button"
 						style="grid-area: mult"
 						class="inp opr"
 						data-value="*"
-					>
-						<span style="display: none">x</span><i class="fa-solid fa-x"></i>
+					><span style="display: none;">x</span><i class="fa-solid fa-x"></i>
 					</button>
 					<button
 						aria-label="division button"
 						style="grid-area: divide"
 						class="inp opr"
 						data-value="/"
-					>
-						<span style="display: none">/</span
-						><i class="fa-solid fa-divide"></i>
+					><span style="display: none;">/</span><i class="fa-solid fa-divide"></i>
 					</button>
 					<button style="grid-area: clear" id="clear">Clear</button>
 					<button
