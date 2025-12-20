@@ -16,7 +16,7 @@ const characters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
 p.innertext: raw text shown text only , checks css for visibility first
 p.textContent: raw text , even unvisible by css
 p.innerHTML :insert html tags and text*/
-display.value = "";
+display.textContent = "";
 //! ----display properties of Objects: console.dir(display)--
 //console.log(typeof(display.textContent))
 //! ----event listner--
@@ -27,47 +27,50 @@ e.target.classList.contains('className')
 e.target.matches('.class#id')*/
 function inputFunc(e) {
 	let endChar =
-		display.value.length > 1 ? display.value.slice(-1) : display.value;
-	let numbers = display.value.split(/[\-\+x\/]/);
+		display.textContent.length > 1
+			? display.textContent.slice(-1)
+			: display.textContent;
+	let numbers = display.textContent.split(/[\-\+x\/]/);
 	if (e.target.matches(".inp")) {
 		if (e.target.id === "dot") {
 			if (!operations1.includes(endChar)) {
 				if (!numbers[numbers.length - 1].includes(".")) {
-					display.value += ".";
+					display.textContent += ".";
 				}
 			}
 		} else if (e.target.matches(".opr")) {
 			if (e.target.dataset.value == "-" && endChar == "") {
-				display.value += e.target.textContent;
+				display.textContent += "-";
 			}
 			if (!operations1.includes(endChar)) {
-				display.value += e.target.textContent;
+				display.textContent += e.target.textContent.trim();
 			} else if (operations2.includes(endChar)) {
-				display.value = display.value.slice(0, -1) + e.target.textContent;
+				display.textContent =
+					display.textContent.slice(0, -1) + e.target.textContent.trim();
 			}
 		} else {
-			display.value += e.target.textContent;
+			display.textContent += e.target.textContent.trim();
 		}
 	} else if (e.target.id == "clear") {
-		display.value = "";
+		display.textContent = "";
 	} else if (e.target.id == "delete") {
-		if (display.value.length > 1) {
-			let text = display.value;
+		if (display.textContent.length > 1) {
+			let text = display.textContent;
 			let textKeep = text.slice(0, -1);
-			display.value = textKeep;
-		} else {
-			display.value = "";
-		}
+			display.textContent = textKeep;
+		} else if (display.textContent.length == 1) {
+			display.textContent = "";
+		}else{}
 	} else if (e.target.id === "equal") {
 		//this is for the error produced with this kind of numbers:  05.23   005.2  006.1  0000008.3
-		let value = display.value.replaceAll("x", "*");
+		let value = display.textContent.replaceAll("x", "*");
 		let numbersList = [];
 		let num = "";
 		for (const char of value) {
 			if (characters.includes(char)) {
 				num += char;
 			} else {
-				numbersList.push(parseFloat(num));
+				numbersList.push(Number(num));
 				// parseFloat parseInt Number
 				numbersList.push(char);
 				num = "";
@@ -78,18 +81,22 @@ function inputFunc(e) {
 		// numbersList.forEach((x)=>{value +=x;})
 		value = numbersList.join("");
 		try {
-			if (eval(value) == Infinity || eval(value) == -Infinity) {
-				display.value = "Zero division Error";
+			if (
+				eval(value) == Infinity ||
+				eval(value) == -Infinity ||
+				eval(value) == NaN
+			) {
+				display.textContent = "Error";
 				setTimeout(() => {
-					display.value = "";
+					display.textContent = "";
 				}, 500);
 			} else {
-				display.value = eval(value);
+				display.textContent = eval(value);
 			}
 		} catch (err) {
-			display.value = "Error";
+			display.textContent = "Error";
 			setTimeout(() => {
-				display.value = "";
+				display.textContent = "";
 			}, 500);
 		} finally {
 			// console.log('done')
