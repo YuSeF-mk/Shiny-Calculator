@@ -42,7 +42,6 @@ html {
 #paragraph {
 	display: flex;
 	align-items: center;
-	justify-content: end;
 	border: 2px solid gold;
 	background-image: linear-gradient(to bottom, rgb(125, 122, 122), white);
 	padding: 10px;
@@ -126,3 +125,4 @@ button:active {
 		opacity: 0;
 	}
 }
+
